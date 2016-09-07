@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package ru.inkontext.persistence;
+package ru.inkontext.domain.projections;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-import ru.inkontext.core.domain.Person;
+import org.springframework.data.rest.core.config.Projection;
+import ru.inkontext.domain.Person;
 
-@Repository
-public interface PersonJPARepository extends CrudRepository<Person, Long> {
+@Projection(name = "city", types = Person.class)
+public interface AdressProjection {
 
+	Long getId();
+
+	String getCity();
 }

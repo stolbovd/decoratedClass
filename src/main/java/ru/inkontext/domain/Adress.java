@@ -14,15 +14,33 @@
  * limitations under the License.
  */
 
-package ru.inkontext.core.projections;
+package ru.inkontext.domain;
 
-import org.springframework.data.rest.core.config.Projection;
-import ru.inkontext.core.domain.Person;
+import lombok.Getter;
+import lombok.Setter;
 
-@Projection(name = "city", types = Person.class)
-interface AdressProjection {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.io.Serializable;
 
-	Long getId();
+@Entity
+@Getter @Setter
+public class Adress implements Serializable {
 
-	String getCity();
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue
+	private Long id;
+
+	@Column
+	private String city;
+
+	@Column
+	private String street;
+
+	protected Adress() {
+	}
 }

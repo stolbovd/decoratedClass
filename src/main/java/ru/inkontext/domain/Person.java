@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ru.inkontext.core.domain;
+package ru.inkontext.domain;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -7,7 +7,7 @@ import org.springframework.data.projection.ProjectionFactory;
 import org.springframework.data.projection.SpelAwareProxyProjectionFactory;
 
 @Configuration
-@EnableJpaRepositories(basePackages="ru.inkontext.persistence")
+//@EnableJpaRepositories(basePackages="ru.inkontext.persistence")
 public class PersistenceConfig {
 
 	@Bean
