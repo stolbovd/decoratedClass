@@ -16,10 +16,17 @@
 
 package ru.inkontext.persistence;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import ru.inkontext.domain.Person;
 
-//@Repository
+import java.util.List;
+
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
+	@Query("select p from Person p left join p.adress a order by a.city, a.street")
+	List<Person> findAllOrderByAdress();
+
+	@Query("select p, a from Person p left join p.adress a where p.id = ?1")
+	Person findById(Long id);
 }

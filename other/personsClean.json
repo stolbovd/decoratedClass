@@ -1,0 +1,6 @@
+[
+    {"name": "Ivan","id": 3,"adress": {"id": 4,"city": "Nefteugansk"}},
+    {"name": "Catherine","id": 2,"adress": {"id": 2,"city": "Surgut"}},
+    {"name": "Dmitry","id": 1,"adress": {"id": 1,"city": "Surgut"}},
+    {"name": "Maxim","id": 4,"adress": {"id": 3,"city": "Surgut"}}
+]

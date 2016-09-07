@@ -19,10 +19,12 @@ package ru.inkontext.domain.projections;
 import org.springframework.data.rest.core.config.Projection;
 import ru.inkontext.domain.Person;
 
-@Projection(name = "city", types = Person.class)
-public interface AdressProjection {
+@Projection(name = "adressCity", types = Person.class)
+public interface PersonCityProjection {
 
 	Long getId();
 
-	String getCity();
+	String getName();
+
+	AdressCityProjection getAdress();
 }

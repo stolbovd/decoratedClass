@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Ivan",
+        "id": 3,
+        "decoratedClass": "ru.inkontext.domain.Person",
+        "adress": {
+            "id": 4,
+            "decoratedClass": "ru.inkontext.domain.Adress",
+            "city": "Nefteugansk"
+        }
+    }, {
+    "name": "Catherine",
+    "id": 2,
+    "decoratedClass": "ru.inkontext.domain.Person",
+    "adress": {
+        "id": 2,
+        "decoratedClass": "ru.inkontext.domain.Adress",
+        "city": "Surgut"
+    }
+}, {
+    "name": "Dmitry",
+    "id": 1,
+    "decoratedClass": "ru.inkontext.domain.Person",
+    "adress": {
+        "id": 1,
+        "decoratedClass": "ru.inkontext.domain.Adress",
+        "city": "Surgut"
+    }
+}, {
+    "name": "Maxim",
+    "id": 4,
+    "decoratedClass": "ru.inkontext.domain.Person",
+    "adress": {
+        "id": 3,
+        "decoratedClass": "ru.inkontext.domain.Adress",
+        "city": "Surgut"
+    }
+}
+]

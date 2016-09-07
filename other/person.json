@@ -1,0 +1,76 @@
+{
+    "_embedded": {
+        "persons": [
+            {
+                "name": "Ivan",
+                "id": 3,
+                "adress": {
+                    "id": 4,
+                    "city": "Nefteugansk"
+                },
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8084/rest/data/persons/3"
+                    },
+                    "person": {
+                        "href": "http://localhost:8084/rest/data/persons/3{?projection}",
+                        "templated": true
+                    }
+                }
+            }, {
+                "name": "Catherine",
+                "id": 2,
+                "adress": {
+                    "id": 2,
+                    "city": "Surgut"
+                },
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8084/rest/data/persons/2"
+                    },
+                    "person": {
+                        "href": "http://localhost:8084/rest/data/persons/2{?projection}",
+                        "templated": true
+                    }
+                }
+            }, {
+                "name": "Dmitry",
+                "id": 1,
+                "adress": {
+                    "id": 1,
+                    "city": "Surgut"
+                },
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8084/rest/data/persons/1"
+                    },
+                    "person": {
+                        "href": "http://localhost:8084/rest/data/persons/1{?projection}",
+                        "templated": true
+                    }
+                }
+            }, {
+                "name": "Maxim",
+                "id": 4,
+                "adress": {
+                    "id": 3,
+                    "city": "Surgut"
+                },
+                "_links": {
+                    "self": {
+                        "href": "http://localhost:8084/rest/data/persons/4"
+                    },
+                    "person": {
+                        "href": "http://localhost:8084/rest/data/persons/4{?projection}",
+                        "templated": true
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8084/rest/data/persons/search/findAllOrderByAdress?projection=adressCity"
+        }
+    }
+}
