@@ -2,6 +2,7 @@
 Example of question: how to exclude **decoratedClass** from JSON links, created from Projection and received with Spring @RestController
 
 https://jira.spring.io/browse/DATAREST-890
+https://jira.spring.io/browse/DATACMNS-909
 
 Experiment with spring-boot version: in 1.3.7.RELEASE (spring data 2.4.4) decoratedClass is absent, but in 1.4.0.RELEASE (spring data 2.5.2) it is present
 
