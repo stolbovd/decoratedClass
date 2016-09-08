@@ -21,6 +21,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity
 @Getter @Setter
@@ -35,10 +36,9 @@ public class Person implements Serializable {
 	private String name;
 
 	@Column
-	private String birthday;
+	private Date birthday;
 
 	@OneToOne
-//	@NaturalId
 	private Adress adress;
 
 	protected Person() {

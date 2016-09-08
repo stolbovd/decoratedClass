@@ -19,6 +19,7 @@ package ru.inkontext.persistence;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import ru.inkontext.domain.Person;
+import ru.inkontext.domain.projections.PersonCityProjection;
 
 import java.util.List;
 
@@ -29,4 +30,8 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
 	@Query("select p, a from Person p left join p.adress a where p.id = ?1")
 	Person findById(Long id);
+
+	PersonCityProjection findProjectedById(Long id);
+
+	<T> T findProjectedById(Long id, Class<T> projection);
 }

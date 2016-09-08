@@ -6,7 +6,7 @@ import org.springframework.data.projection.ProjectionFactory;
 import org.springframework.data.projection.SpelAwareProxyProjectionFactory;
 
 @Configuration
-public class PersistenceConfig {
+public class RestConfig {
 
 	@Bean
 	public ProjectionFactory projectionFactory() {

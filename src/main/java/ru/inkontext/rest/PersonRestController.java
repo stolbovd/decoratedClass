@@ -10,6 +10,7 @@ import org.springframework.data.projection.ProjectionFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.inkontext.domain.Person;
 import ru.inkontext.domain.projections.PersonCityProjection;
 import ru.inkontext.persistence.PersonRepository;
 
@@ -29,6 +30,11 @@ public class PersonRestController {
 	@Autowired
 	PersonRepository personRepository;
 
+	@RequestMapping
+	public List<Person> findPersons() throws Exception {
+		return personRepository.findAllOrderByAdress();
+	}
+
 	@RequestMapping(value = "search/adressCity", method = GET)
 	public List<PersonCityProjection> findPersonsOrderByAdress() throws Exception {
 		List<PersonCityProjection> projections = new ArrayList<>();
@@ -37,8 +43,26 @@ public class PersonRestController {
 		return projections;
 	}
 
+	@RequestMapping(value = "{id}")
+	public Person findPerson(@PathVariable("id") Long id) throws Exception {
+		return personRepository.findById(id);
+	}
+
+	@RequestMapping(value = "{id}/projected")
+	public PersonCityProjection findPersonProjected(@PathVariable("id") Long id) throws Exception {
+		return personRepository.findProjectedById(id);
+	}
+
+	@RequestMapping(value = "{id}/projectedClass")
+	public PersonCityProjection findPersonProjectedClass(@PathVariable("id") Long id) throws Exception {
+		return personRepository.findProjectedById(id, PersonCityProjection.class);
+	}
+
 	@RequestMapping(value = "{id}/adressCity", method = GET)
-	public PersonCityProjection findPersonById(@PathVariable("id") Long id) throws Exception {
-		return projectionFactory.createProjection(PersonCityProjection.class, personRepository.findById(id));
+	public PersonCityProjection findPersonAdressCity(@PathVariable("id") Long id) throws Exception {
+		PersonCityProjection personCityProjection =
+				projectionFactory.createProjection(PersonCityProjection.class,
+				personRepository.findById(id));
+		return personCityProjection;
 	}
 }
