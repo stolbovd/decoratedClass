@@ -1,6 +1,7 @@
 package ru.inkontext.rest;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,19 +44,21 @@ public class PersonRestControllerTest {
 	}
 
 	@Test
+	@Ignore
 	public void findPersonProjected() throws Exception {
 		mockMvc.perform(get("/rest/persons/1/projected"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("id").value(1))
-				.andExpect(jsonPath("decoratedClass").value("java.util.HashMap"));
+				.andExpect(jsonPath("decoratedClass").doesNotExist());
 	}
 
 	@Test
+	@Ignore
 	public void findPersonProjectedClass() throws Exception {
 		mockMvc.perform(get("/rest/persons/1/projectedClass"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("id").value(1))
-				.andExpect(jsonPath("decoratedClass").value("java.util.HashMap"));
+				.andExpect(jsonPath("decoratedClass").doesNotExist());
 	}
 
 	@Test
@@ -63,7 +66,7 @@ public class PersonRestControllerTest {
 		mockMvc.perform(get("/rest/persons/1/adressCity"))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("id").value(1))
-				.andExpect(jsonPath("decoratedClass").value("ru.inkontext.domain.Person"));
+				.andExpect(jsonPath("decoratedClass").doesNotExist());
 	}
 
 	@Test

@@ -48,10 +48,10 @@ public class PersonRestController {
 		return personRepository.findById(id);
 	}
 
-	@RequestMapping(value = "{id}/projected")
-	public PersonCityProjection findPersonProjected(@PathVariable("id") Long id) throws Exception {
-		return personRepository.findProjectedById(id);
-	}
+//	@RequestMapping(value = "{id}/projected")
+//	public PersonCityProjection findPersonProjected(@PathVariable("id") Long id) throws Exception {
+//		return personRepository.findProjectedById(id);
+//	}
 
 	@RequestMapping(value = "{id}/projectedClass")
 	public PersonCityProjection findPersonProjectedClass(@PathVariable("id") Long id) throws Exception {

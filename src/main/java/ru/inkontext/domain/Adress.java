@@ -28,7 +28,6 @@ import java.io.Serializable;
 @Entity
 @Getter @Setter
 public class Adress implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@Id

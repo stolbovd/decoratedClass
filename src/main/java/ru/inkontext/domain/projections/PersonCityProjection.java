@@ -16,6 +16,7 @@
 
 package ru.inkontext.domain.projections;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.rest.core.config.Projection;
 import ru.inkontext.domain.Person;
 
@@ -27,4 +28,7 @@ public interface PersonCityProjection {
 	String getName();
 
 	AdressCityProjection getAdress();
+
+	@JsonIgnore
+	Class<?> getDecoratedClass();
 }
