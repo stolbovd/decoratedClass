@@ -32,11 +32,11 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 	@Query("select p, a from Person p left join p.adress a where p.id = ?1")
 	Person findById(Long id);
 
-//	PersonCityProjection findProjectedById(Long id);
+	PersonCityProjection findProjectedById(Long id);
 
 	<T> T findProjectedClassById(Long id, Class<T> projection);
 
 	List<Person> findByAdressId(@Param("adress") Long adressId);
 
-//	List<PersonCityProjection> findProjectedByAdressId(@Param("adress") Long adressId); //ToDo do not work
+	List<PersonCityProjection> findProjectedByAdressId(@Param("adress") Long adressId); //ToDo do not work
 }
