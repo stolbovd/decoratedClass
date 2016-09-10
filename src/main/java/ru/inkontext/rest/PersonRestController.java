@@ -55,7 +55,7 @@ public class PersonRestController {
 
 	@RequestMapping(value = "{id}/projectedClass")
 	public PersonCityProjection findPersonProjectedClass(@PathVariable("id") Long id) throws Exception {
-		return personRepository.findProjectedById(id, PersonCityProjection.class);
+		return personRepository.findProjectedClassById(id, PersonCityProjection.class);
 	}
 
 	@RequestMapping(value = "{id}/adressCity", method = GET)

@@ -18,6 +18,7 @@ package ru.inkontext.persistence;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import ru.inkontext.domain.Person;
 import ru.inkontext.domain.projections.PersonCityProjection;
 
@@ -33,5 +34,9 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
 	PersonCityProjection findProjectedById(Long id);
 
-	<T> T findProjectedById(Long id, Class<T> projection);
+	<T> T findProjectedClassById(Long id, Class<T> projection);
+
+	List<Person> findByAdressId(@Param("adress") Long adressId);
+
+	List<PersonCityProjection> findProjectedByAdressId(@Param("adress") Long adressId); //ToDo do not work
 }

@@ -82,4 +82,12 @@ public class PersonRestControllerTest {
 				.andExpect(jsonPath("_links").exists());
 	}
 
+	@Test
+	public void findByAdress_Id() throws Exception {
+		mockMvc.perform(get("/rest/api/persons/search/findByAdressId?adress=2&projection=adressCity"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("_embedded.persons").exists())
+				.andExpect(jsonPath("_embedded.persons[0].id").value(2))
+				.andExpect(jsonPath("_embedded.persons[0].adress.id").value(2));
+	}
 }
