@@ -18,7 +18,7 @@ A temporary workaround would be to redeclare the getDecoratedClass() method on y
 
 - [x] Everything works fine with `spring-data-commons 1.13.0.BUILD-SNAPSHOT`.
 
-Tests below imaging matter of question.
+#Tests below imaging matter of question.
 
 ## RestController
 ### Without Projection
