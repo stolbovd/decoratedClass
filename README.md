@@ -4,7 +4,7 @@ Example of question: how to exclude **decoratedClass** from JSON links, created 
 https://jira.spring.io/browse/DATAREST-890
 https://jira.spring.io/browse/DATACMNS-909
 
-- [v] *Resolved by Oliver Gierke @olivergierke in `spring-data-commons 1.13.0.BUILD-SNAPSHOT`*
+- [x] *Resolved by Oliver Gierke @olivergierke in `spring-data-commons 1.13.0.BUILD-SNAPSHOT`*
 
 Experiment with spring-boot version: in 1.3.7.RELEASE (spring data 2.4.4) decoratedClass is absent, but in 1.4.0.RELEASE (spring data 2.5.2) it is present
 
