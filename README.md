@@ -4,6 +4,8 @@ Example of question: how to exclude **decoratedClass** from JSON links, created 
 https://jira.spring.io/browse/DATAREST-890
 https://jira.spring.io/browse/DATACMNS-909
 
+- [v] *Resolved by Oliver Gierke @olivergierke in `spring-data-commons 1.13.0.BUILD-SNAPSHOT`*
+
 Experiment with spring-boot version: in 1.3.7.RELEASE (spring data 2.4.4) decoratedClass is absent, but in 1.4.0.RELEASE (spring data 2.5.2) it is present
 
 I'd like get clean JSON, when using Projection as DTO with RestController.
@@ -12,13 +14,7 @@ However, in the best case we get JSON, most of which contain links to dekoratedC
 "adress":{"id":1,"decoratedClass":"ru.inkontext.domain.Adress","city":"Surgut"}}
 `
 
-# Decide by Oliver Gierke @olivergierke
-Looks like this is caused by proxies created through Spring's ProxyFactory now also implementing a new DecoratingProxy, which exposes getDecoratedClass() and our TargetAware interface that's in place to mask the artificial proxy properties doesn't mask that newly introduced attribute. I can adapt our TargetAware accordingly.
-A temporary workaround would be to redeclare the getDecoratedClass() method on your projection interface and annotate it with @JsonIgnore.
-
-- [x] Everything works fine with `spring-data-commons 1.13.0.BUILD-SNAPSHOT`.
-
-#Tests below imaging matter of question.
+Tests below imaging matter of question.
 
 ## RestController
 ### Without Projection
