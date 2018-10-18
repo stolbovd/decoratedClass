@@ -24,7 +24,7 @@
 		<start-class>ru.inkontext.DecoratedClassApplication</start-class>
         <java.version>1.8</java.version>
 	    <lombok.version>1.16.10</lombok.version>
-		<spring.data.common.version>1.13.11.RELEASE</spring.data.common.version>
+		<spring.data.common.version>1.13.12.RELEASE</spring.data.common.version>
 	</properties>
 	
 	<dependencies>
